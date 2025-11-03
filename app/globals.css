@@ -1,10 +1,11 @@
-@layer components {
-  .tw-proof { @apply p-4 bg-slate-900 text-white rounded-xl; }
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root { color-scheme: light dark; }
 html, body { height: 100%; }
+
+/* (optioneel) tijdelijke bewijs-stijl — let op: @apply ALTIJD binnen een selector */
+@layer components {
+  .tw-proof { @apply p-4 bg-slate-900 text-white rounded-xl; }
+}
