@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bot, FileText, Zap, Check } from "lucide-react";
+import Image from "next/image";
+
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
@@ -29,26 +31,35 @@ export default function Page() {
     <main>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(15,23,42,0.08),transparent)] dark:bg-[radial-gradient(60%_60%_at_50%_0%,rgba(148,163,184,0.08),transparent)]" />
-        <div className="container-narrow py-20 relative">
-          <div className="max-w-3xl">
-            <Badge>{t.badge}</Badge>
-            <h1 className="mt-4 text-4xl md:text-5xl">{t.heroTitle}</h1>
-            <p className="muted mt-5 text-base md:text-lg max-w-2xl">{t.heroSub}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild><Link href="/pricing">{t.ctaPrimary}</Link></Button>
-              <Button variant="outline" asChild><Link href="/contact">{t.ctaSecondary}</Link></Button>
-              <button
-                onClick={() => setLang((p) => (p === "nl" ? "en" : "nl"))}
-                className="ml-1 px-3 py-2 rounded-xl text-xs border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-              >
-                {lang === "nl" ? "English" : "Nederlands"}
-              </button>
-            </div>
-            <p className="muted mt-4 text-sm">{t.wlNote}</p>
+  <div className="absolute inset-0 bg-grid-slate dark:opacity-60 opacity-40" />
+  <div className="absolute inset-0 bg-radial-fade dark:opacity-70 opacity-60" />
+  <div className="container-narrow py-20 relative grid md:grid-cols-2 gap-10 items-center">
+    {/* Tekstkolom (ongewijzigd) */}
+    <div>
+      {/* ... laat je bestaande Badge, h1, p en buttons hier staan ... */}
+    </div>
+
+    {/* Illustratiekolom */}
+    <div className="hidden md:block">
+      <div className="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-slate-200/70 dark:ring-slate-800/70 shadow-sm bg-white/70 dark:bg-slate-900/50">
+        {/* Simpele “cards & nodes” illustratie met pure divs */}
+        <div className="h-full w-full p-6 grid grid-cols-3 gap-4">
+          <div className="col-span-2 rounded-2xl bg-slate-100 dark:bg-slate-800" />
+          <div className="rounded-2xl bg-slate-100 dark:bg-slate-800" />
+          <div className="rounded-2xl bg-slate-100 dark:bg-slate-800" />
+          <div className="col-span-2 rounded-2xl bg-slate-100 dark:bg-slate-800" />
+          <div className="col-span-3 mt-auto flex items-center justify-between">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="h-2 w-2 rounded-full bg-sky-500" />
+            <span className="h-2 w-2 rounded-full bg-violet-500" />
           </div>
         </div>
-      </section>
+      </div>
+      <p className="muted text-xs mt-3">Demo-visual: data → inzichten → acties.</p>
+    </div>
+  </div>
+</section>
+
 
       {/* Trust strip */}
       <section className="border-y border-slate-200/70 dark:border-slate-800/70 bg-white/60 dark:bg-slate-900/40 backdrop-blur">
