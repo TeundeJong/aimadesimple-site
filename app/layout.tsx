@@ -1,4 +1,4 @@
-import "./site.css"; // of "./globals.css" als je die naam gebruikt
+import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
