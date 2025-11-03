@@ -97,3 +97,4 @@ export default function Page() {
     </main>
   );
 }
+<div className="p-6 bg-slate-900 text-white rounded-xl">Tailwind test</div>
