@@ -5,3 +5,15 @@
 :root { color-scheme: light dark; }
 html, body { height: 100%; }
 
+@layer base {
+  html { @apply antialiased; }
+  h1 { @apply font-extrabold tracking-tight; }
+  h2 { @apply font-bold tracking-tight; }
+  a { @apply underline-offset-4 decoration-slate-300 dark:decoration-slate-700; }
+}
+
+@layer components {
+  .container-narrow { @apply max-w-6xl mx-auto px-4; }
+  .muted { @apply text-slate-600 dark:text-slate-300; }
+  .kbd { @apply inline-flex items-center rounded-md border px-1.5 py-0.5 text-xs border-slate-300 dark:border-slate-700; }
+}
