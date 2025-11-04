@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Section, { SectionTitle } from "@/components/Section";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
 
 export default function ServicesPage() {

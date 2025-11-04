@@ -1,10 +1,11 @@
 "use client";
 
-import { useT } from "@/lib/i18n";
+import { useLang } from "@/lib/i18n";
+
 import { useState } from "react";
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale } = useT();
+  const { locale, setLocale } = useLang();;
   const [open, setOpen] = useState(false);
   const options = [
     { code: "nl", label: "Nederlands" },

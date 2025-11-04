@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { useT } from "@/lib/i18n";
+import { useLang } from "@/lib/i18n";
 
 export default function Footer() {
-  const { t } = useT();
+  const { locale, setLocale } = useLang();
+  const { t } = useLang()
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 text-sm sm:grid-cols-3">

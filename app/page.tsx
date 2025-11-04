@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Section, { Container, SectionTitle } from "@/components/Section";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
 
 export default function HomePage() {

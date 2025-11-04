@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useT } from "@/lib/i18n";
+import { useLang } from "@/lib/i18n";
 
 export default function Navbar() {
-  const { t } = useT();
+  const { locale, setLocale } = useLang();
+  const { t } = useLang()
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/60 bg-white/80 backdrop-blur">

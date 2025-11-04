@@ -1,42 +1,64 @@
+// lib/i18n.tsx
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+
+// ✅ beschikbare talen
+export type Locale = "nl" | "en" | "es" | "pt" | "de";
+
+// ✅ laad je JSONs
 import nl from "@/locales/nl.json";
 import en from "@/locales/en.json";
 import es from "@/locales/es.json";
 import pt from "@/locales/pt.json";
 import de from "@/locales/de.json";
 
-type Locale = "nl" | "en" | "es" | "pt" | "de";
-type Dict = Record<string, string>;
-
 const DICTS: Record<Locale, Record<string,string | any>> = { nl, en, es, pt, de };
 
-const LangCtx = createContext<{
+// ✅ context type
+type LangContext = {
   locale: Locale;
   t: (k: string) => string;
   setLocale: (l: Locale) => void;
-}>({ locale: "nl", t: (k) => k, setLocale: () => {} });
+};
 
+// ✅ init context
+const LangCtx = createContext<LangContext>({
+  locale: "nl",
+  t: (k) => k,
+  setLocale: () => {},
+});
+
+// ✅ provider op module-niveau exporteren
 export function LangProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("nl");
 
+  // (optioneel) taal uit cookie lezen
   useEffect(() => {
-    const cookie = document.cookie.split("; ").find((c) => c.startsWith("locale="));
-    if (cookie) setLocale(cookie.split("=")[1] as Locale);
+    const c = document.cookie.split("; ").find((c) => c.startsWith("locale="));
+    if (c) {
+      const val = c.split("=")[1] as Locale;
+      if (val && DICTS[val]) setLocale(val);
+    }
   }, []);
 
-  function setLoc(l: Locale) {
-    document.cookie = `locale=${l}; path=/; max-age=31536000`;
+  // vertaalfunctie
+  const t = (k: string) => DICTS[locale]?.[k] ?? k;
+
+  // (optioneel) taal bewaren als cookie
+  const setLocaleAndPersist = (l: Locale) => {
     setLocale(l);
-  }
+    document.cookie = `locale=${l}; path=/; max-age=31536000`;
+  };
 
-  const dict = DICTS[locale] ?? DICTS.nl;
-  const t = (k: string) => dict[k] ?? k;
-
-  return <LangCtx.Provider value={{ locale, t, setLocale: setLoc }}>{children}</LangCtx.Provider>;
+  return (
+    <LangCtx.Provider value={{ locale, t, setLocale: setLocaleAndPersist }}>
+      {children}
+    </LangCtx.Provider>
+  );
 }
 
-export function useT() {
+// ✅ hook op module-niveau exporteren
+export function useLang() {
   return useContext(LangCtx);
 }

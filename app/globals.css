@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: light dark;
-}
-
-html, body {
-  height: 100%;
-  background-color: #0f172a; /* donker slate */
-  color: #e2e8f0; /* tekstkleur slate-200 */
-  font-family: system-ui, sans-serif;
-}
+/* keep it minimal; no global borders/backgrounds */
+:root { color-scheme: light dark }
+html, body { height: 100% }
