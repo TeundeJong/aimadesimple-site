@@ -1,0 +1,111 @@
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Soluciones de IA profesionales para organizaciones modernas",
+  "claim": "Donde el insight se convierte en acción.",
+
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "products": "Productos",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "start": "Empezar"
+  },
+
+  "badges": {
+    "fast_live": "En vivo en pocos días",
+    "privacy_ready": "Privacidad primero y listo para GDPR",
+    "api_sla": "Integraciones API y SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Reservar diagnóstico",
+    "view_services": "Ver servicios",
+    "view_pricing": "Ver precios",
+    "contact_us": "Contáctanos"
+  },
+
+  "hero": {
+    "title": "Soluciones de IA profesionales para organizaciones modernas",
+    "subtitle": "Convertimos datos complejos en decisiones con integraciones de IA prácticas, bots de soporte y automatización inteligente. Listo para empresas y con privacidad primero."
+  },
+
+  "services": {
+    "title": "Qué ofrecemos",
+    "cards": {
+      "bot": {
+        "title": "Bot de Soporte con IA",
+        "desc": "Entrena con tu contenido, responde 24/7 y ejecuta acciones vía API (tickets, pedidos, CRM).",
+        "cta": "Explorar bots"
+      },
+      "doc": {
+        "title": "Analizador de Documentos",
+        "desc": "Sube contratos/manuales y obtén riesgos, resúmenes y acciones inmediatas.",
+        "cta": "Explorar analizador"
+      },
+      "auto": {
+        "title": "Automatizaciones e Integraciones",
+        "desc": "Conecta Zapier/Make, Slack, email o tu CMS. Optimiza ventas, soporte y onboarding.",
+        "cta": "Explorar integraciones"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Precios simples",
+    "subtitle": "Transparente, cancela cuando quieras. Empresa bajo solicitud.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "29 €/mes",
+        "cta": "Empezar",
+        "items": ["Bot de IA básico", "100 documentos/mes", "Soporte por email"]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "59 €/mes",
+        "cta": "Probar",
+        "items": ["Bot avanzado y acciones", "Documentos ilimitados*", "Integraciones y webhooks"],
+        "disclaimer": "*Política de uso justo"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "A medida",
+        "cta": "Contacto",
+        "items": ["SLA y SSO", "Soporte dedicado", "Seguridad personalizada"]
+      }
+    },
+    "note": "Precios sin IVA. Enterprise: descuentos por volumen y soluciones a medida."
+  },
+
+  "about": {
+    "title": "Sobre nosotros",
+    "intro": "La IA importa cuando el insight se convierte en acción.",
+    "who": "CivicAI Solutions es un equipo práctico que construye bots de soporte, inteligencia documental y automatizaciones a medida.",
+    "what": "Implementamos en días, con privacidad primero, KPIs claros y conocimiento transferible.",
+    "vision": "Visión",
+    "vision_text": "IA transparente y confiable que simplifica procesos y elimina tareas repetitivas.",
+    "roadmap": "Hoja de ruta",
+    "roadmap_text": "Más integraciones, mejor inteligencia documental y mayor seguridad enterprise sin perder simplicidad."
+  },
+
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Reserva un diagnóstico corto: en 15 minutos mapeamos tus mejores oportunidades de IA."
+  },
+
+  "footer": {
+    "rights": "© 2025 CivicAI Solutions",
+    "links": {
+      "services": "Servicios",
+      "pricing": "Precios",
+      "privacy": "Privacidad"
+    }
+  },
+
+  "misc": {
+    "learn_more": "Saber más",
+    "get_started": "Comenzar",
+    "banner_caption": "Donde el insight se convierte en acción."
+  }
+}

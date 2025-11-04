@@ -1,0 +1,111 @@
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Professionelle KI-Lösungen für moderne Organisationen",
+  "claim": "Wo Insight zu Handlung wird.",
+
+  "nav": {
+    "home": "Startseite",
+    "services": "Services",
+    "products": "Produkte",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "start": "Jetzt starten"
+  },
+
+  "badges": {
+    "fast_live": "In wenigen Tagen live",
+    "privacy_ready": "Privacy-first & DSGVO-konform",
+    "api_sla": "API-Integrationen & SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Intake buchen",
+    "view_services": "Services ansehen",
+    "view_pricing": "Preise ansehen",
+    "contact_us": "Kontakt aufnehmen"
+  },
+
+  "hero": {
+    "title": "Professionelle KI-Lösungen für moderne Organisationen",
+    "subtitle": "Wir verwandeln komplexe Daten in Entscheidungen – mit praktischen KI-Integrationen, Support-Bots und smarter Automatisierung. Enterprise-ready und Privacy-first."
+  },
+
+  "services": {
+    "title": "Unsere Leistungen",
+    "cards": {
+      "bot": {
+        "title": "KI-Support-Bot",
+        "desc": "Auf deinen Inhalten trainieren, 24/7 antworten und Aktionen via APIs auslösen (Tickets, Bestellungen, CRM).",
+        "cta": "Bots ansehen"
+      },
+      "doc": {
+        "title": "Dokumenten-Analyzer",
+        "desc": "Verträge/Handbücher hochladen und sofort Risiken, Zusammenfassungen und Maßnahmen erhalten.",
+        "cta": "Analyzer ansehen"
+      },
+      "auto": {
+        "title": "Automations & Integrationen",
+        "desc": "Zapier/Make, Slack, E-Mail oder CMS verbinden. Sales, Support und Onboarding beschleunigen.",
+        "cta": "Integrationen ansehen"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Einfache Preise",
+    "subtitle": "Transparent, monatlich kündbar. Enterprise auf Anfrage.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "29 €/Monat",
+        "cta": "Starten",
+        "items": ["Basis-KI-Bot", "100 Dokumente/Monat", "E-Mail-Support"]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "59 €/Monat",
+        "cta": "Testen",
+        "items": ["Erweiterter Bot & Aktionen", "Unbegrenzte Dokumente*", "Integrationen & Webhooks"],
+        "disclaimer": "*Fair-Use-Policy"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Auf Anfrage",
+        "cta": "Kontakt",
+        "items": ["SLA & SSO", "Dedizierter Support", "Individuelle Sicherheit"]
+      }
+    },
+    "note": "Preise exkl. USt. Enterprise: Rabatte & maßgeschneiderte Lösungen."
+  },
+
+  "about": {
+    "title": "Über uns",
+    "intro": "KI zählt erst, wenn Insights zu Handlung werden.",
+    "who": "CivicAI Solutions ist ein hands-on Team, das Support-Bots, Dokumenten-Intelligenz und individuelle Automatisierungen baut.",
+    "what": "Implementierung in Tagen, Privacy-first, klare KPIs und übertragbares Know-how.",
+    "vision": "Vision",
+    "vision_text": "Transparente, vertrauenswürdige KI, die Prozesse vereinfacht und Routinearbeit eliminiert.",
+    "roadmap": "Zukunft",
+    "roadmap_text": "Mehr Integrationen, smartere Dokumenten-Intelligenz und stärkere Enterprise-Security – ohne Komplexität."
+  },
+
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Buche ein kurzes Intake – in 15 Minuten identifizieren wir deine besten KI-Chancen."
+  },
+
+  "footer": {
+    "rights": "© 2025 CivicAI Solutions",
+    "links": {
+      "services": "Services",
+      "pricing": "Preise",
+      "privacy": "Datenschutz"
+    }
+  },
+
+  "misc": {
+    "learn_more": "Mehr erfahren",
+    "get_started": "Loslegen",
+    "banner_caption": "Wo Insight zu Handlung wird."
+  }
+}

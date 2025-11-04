@@ -1,0 +1,123 @@
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Professionele AI-oplossingen voor moderne organisaties",
+  "claim": "Where insight becomes action.",
+
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Producten",
+    "pricing": "Prijzen",
+    "contact": "Contact",
+    "start": "Start nu"
+  },
+
+  "badges": {
+    "fast_live": "Binnen dagen live",
+    "privacy_ready": "Privacy-first & GDPR-ready",
+    "api_sla": "API-integraties & SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Plan intake",
+    "view_services": "Bekijk services",
+    "view_pricing": "Bekijk prijzen",
+    "contact_us": "Neem contact op"
+  },
+
+  "hero": {
+    "title": "Professionele AI-oplossingen voor moderne organisaties",
+    "subtitle": "We vertalen complexe data naar duidelijke beslissingen met praktische AI-integraties, support-bots en slimme automatisering. Enterprise-ready en privacy-first."
+  },
+
+  "services": {
+    "title": "Wat we leveren",
+    "cards": {
+      "bot": {
+        "title": "AI Support Bot",
+        "desc": "Train op je content, antwoord 24/7 en voer acties uit via API’s (tickets, orders, CRM).",
+        "cta": "Bekijk bot-oplossingen"
+      },
+      "doc": {
+        "title": "Document Analyzer",
+        "desc": "Upload contracten/handleidingen en krijg directe risico’s, samenvattingen en actiepunten.",
+        "cta": "Bekijk analyzer"
+      },
+      "auto": {
+        "title": "Automations & Integraties",
+        "desc": "Koppel Zapier/Make, Slack, e-mail of je CMS. Stroomlijn sales, support en onboarding.",
+        "cta": "Bekijk integraties"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Eenvoudige prijzen",
+    "subtitle": "Transparant, maandelijks opzegbaar. Enterprise op aanvraag.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "€29/m",
+        "cta": "Starten",
+        "items": [
+          "Basale AI-bot",
+          "100 documenten/maand",
+          "E-mail support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "€59/m",
+        "cta": "Proberen",
+        "items": [
+          "Geavanceerde bot & acties",
+          "Onbeperkt documenten*",
+          "Integraties & webhooks"
+        ],
+        "disclaimer": "*Fair-use policy"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Op aanvraag",
+        "cta": "Contact",
+        "items": [
+          "SLA & SSO",
+          "Dedicated support",
+          "Custom security"
+        ]
+      }
+    },
+    "note": "Prijzen excl. btw. Enterprise: maatwerk & volume-korting."
+  },
+
+  "about": {
+    "title": "Over ons",
+    "intro": "Wij geloven dat AI pas waarde heeft als inzichten ook daadwerkelijk tot actie leiden.",
+    "who": "CivicAI Solutions is een klein, hands-on team. We bouwen support-bots, document analyse en maatwerk automatisering waarmee teams sneller en consistenter werken.",
+    "what": "We leveren implementatie binnen dagen, privacy-first, met duidelijke KPI’s en overdraagbare kennis.",
+    "vision": "Visie",
+    "vision_text": "Transparante, betrouwbare AI die processen vereenvoudigt en mensen werk uit handen neemt.",
+    "roadmap": "Toekomst",
+    "roadmap_text": "Uitbreiding van integraties, betere document-intelligentie en strengere enterprise-security — zonder onze simplicity te verliezen."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Plan een korte intake — in 15 minuten mappen we jouw beste AI-kansen."
+  },
+
+  "footer": {
+    "rights": "© 2025 CivicAI Solutions",
+    "links": {
+      "services": "Services",
+      "pricing": "Prijzen",
+      "privacy": "Privacy"
+    }
+  },
+
+  "misc": {
+    "learn_more": "Meer info",
+    "get_started": "Aan de slag",
+    "banner_caption": "Where insight becomes action."
+  }
+}

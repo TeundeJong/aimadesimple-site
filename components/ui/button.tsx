@@ -1,22 +1,30 @@
-import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import React from "react";
 
-type Variant = "default" | "outline";
-
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  asChild?: boolean;
-  variant?: Variant;
-}
-
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, asChild, variant = "default", ...props }, ref) => {
-    const Comp: any = asChild ? "a" : "button";
-    const base = "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-slate-300 dark:focus:ring-slate-700";
-    const variants: Record<Variant, string> = {
-      default: "bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200",
-      outline: "bg-transparent border border-slate-300 text-slate-900 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800",
-    };
-    return <Comp ref={ref as any} className={cn(base, variants[variant], className)} {...props} />;
+const button = cva(
+  "inline-flex items-center justify-center rounded-lg text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:opacity-50 disabled:pointer-events-none",
+  {
+    variants: {
+      variant: {
+        primary: "bg-blue-600 text-white hover:bg-blue-700",
+        outline: "bg-transparent text-slate-800 hover:bg-slate-100/60", // no border
+        ghost: "bg-transparent text-slate-700 hover:bg-slate-100",
+      },
+      size: {
+        sm: "px-3 py-2",
+        md: "px-4 py-2.5",
+        lg: "px-5 py-3 text-base"
+      }
+    },
+    defaultVariants: { variant: "primary", size: "md" }
   }
 );
-Button.displayName = "Button";
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof button> {}
+
+export function Button({ className, variant, size, ...props }: ButtonProps) {
+  return <button className={cn(button({ variant, size }), className)} {...props} />;
+}

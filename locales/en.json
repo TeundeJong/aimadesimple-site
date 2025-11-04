@@ -1,0 +1,111 @@
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Professional AI solutions for modern organizations",
+  "claim": "Where insight becomes action.",
+
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "start": "Start now"
+  },
+
+  "badges": {
+    "fast_live": "Go live in days",
+    "privacy_ready": "Privacy-first & GDPR-ready",
+    "api_sla": "API integrations & SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Book intake",
+    "view_services": "View services",
+    "view_pricing": "View pricing",
+    "contact_us": "Contact us"
+  },
+
+  "hero": {
+    "title": "Professional AI solutions for modern organizations",
+    "subtitle": "We turn complex data into decisions with practical AI integrations, support bots, and smart automation. Enterprise-ready and privacy-first."
+  },
+
+  "services": {
+    "title": "What we deliver",
+    "cards": {
+      "bot": {
+        "title": "AI Support Bot",
+        "desc": "Train on your content, respond 24/7, and trigger actions via APIs (tickets, orders, CRM).",
+        "cta": "Explore bots"
+      },
+      "doc": {
+        "title": "Document Analyzer",
+        "desc": "Upload contracts/manuals to get instant risks, summaries, and action points.",
+        "cta": "Explore analyzer"
+      },
+      "auto": {
+        "title": "Automations & Integrations",
+        "desc": "Connect Zapier/Make, Slack, email, or your CMS. Streamline sales, support, and onboarding.",
+        "cta": "Explore integrations"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Simple pricing",
+    "subtitle": "Transparent, cancel anytime. Enterprise on request.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "€29/mo",
+        "cta": "Start",
+        "items": ["Basic AI bot", "100 documents/month", "Email support"]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "€59/mo",
+        "cta": "Try",
+        "items": ["Advanced bot & actions", "Unlimited documents*", "Integrations & webhooks"],
+        "disclaimer": "*Fair-use policy"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "cta": "Contact",
+        "items": ["SLA & SSO", "Dedicated support", "Custom security"]
+      }
+    },
+    "note": "Prices exclude VAT. Enterprise: custom & volume discounts."
+  },
+
+  "about": {
+    "title": "About us",
+    "intro": "AI only matters when insights turn into action.",
+    "who": "CivicAI Solutions is a small hands-on team building support bots, document intelligence, and custom automations that make teams faster and more consistent.",
+    "what": "We implement in days, privacy-first, with clear KPIs and transferable know-how.",
+    "vision": "Vision",
+    "vision_text": "Transparent, trustworthy AI that simplifies processes and removes busywork.",
+    "roadmap": "Roadmap",
+    "roadmap_text": "More integrations, smarter document intelligence, and stronger enterprise security—without losing simplicity."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Book a short intake—within 15 minutes we map your best AI opportunities."
+  },
+
+  "footer": {
+    "rights": "© 2025 CivicAI Solutions",
+    "links": {
+      "services": "Services",
+      "pricing": "Pricing",
+      "privacy": "Privacy"
+    }
+  },
+
+  "misc": {
+    "learn_more": "Learn more",
+    "get_started": "Get started",
+    "banner_caption": "Where insight becomes action."
+  }
+}

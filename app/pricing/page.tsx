@@ -1,57 +1,64 @@
+"use client";
+
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import Section, { SectionTitle } from "@/components/Section";
+import Button from "@/components/ui/button";
+import { useLang } from "@/lib/i18n";
 
 export default function PricingPage() {
+  const { t } = useLang();
+
+  const plans = [
+    { key: "starter", featured: false },
+    { key: "pro", featured: true },
+    { key: "enterprise", featured: false }
+  ];
+
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Pricing</h1>
-        <p className="mt-3 text-slate-600">Eerlijk en eenvoudig. Maandelijks opzegbaar.</p>
+    <main className="bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
+      <Section>
+        <SectionTitle title={t("pricing.title")} subtitle={t("pricing.subtitle")} />
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+          {plans.map(({ key, featured }) => (
+            <div
+              key={key}
+              className={`rounded-2xl p-6 shadow-sm ring-1 transition ${
+                featured
+                  ? "bg-white text-slate-900 ring-slate-200/90 shadow-md dark:bg-slate-900 dark:text-white dark:ring-slate-800/90"
+                  : "bg-white/80 text-slate-900 ring-slate-200/70 hover:shadow-md dark:bg-slate-900/60 dark:text-white dark:ring-slate-800/70"
+              }`}
+            >
+              <h3 className="text-lg font-semibold">{t(`pricing.plans.${key}.name`)}</h3>
+              <p className="mt-2 text-3xl font-semibold">{t(`pricing.plans.${key}.price`)}</p>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <Card className="rounded-2xl border-slate-200 shadow-sm">
-            <CardHeader><CardTitle>Starter</CardTitle></CardHeader>
-            <CardContent className="text-slate-600 space-y-3">
-              <p className="text-3xl font-bold">€29 <span className="text-base font-normal text-slate-500">/m</span></p>
-              <ul className="list-disc pl-4">
-                <li>Basic AI-bot</li>
-                <li>100 documenten/maand</li>
-                <li>E-mail support</li>
+              <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                {(t(`pricing.plans.${key}.items`) as string[]).map((it, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-0.5">•</span>
+                    <span>{it}</span>
+                  </li>
+                ))}
               </ul>
-              <Link href="/contact"><Button className="mt-4 w-full">Start met Starter</Button></Link>
-            </CardContent>
-          </Card>
 
-          <Card className="rounded-2xl border-slate-200 shadow-sm ring-2 ring-blue-600/10">
-            <CardHeader><CardTitle>Pro</CardTitle></CardHeader>
-            <CardContent className="text-slate-600 space-y-3">
-              <p className="text-3xl font-bold">€59 <span className="text-base font-normal text-slate-500">/m</span></p>
-              <ul className="list-disc pl-4">
-                <li>Geavanceerde bot + acties</li>
-                <li>Onbeperkt documenten</li>
-                <li>Integraties & webhooks</li>
-              </ul>
-              <Link href="/contact"><Button className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white">Kies Pro</Button></Link>
-            </CardContent>
-          </Card>
+              {t(`pricing.plans.${key}.disclaimer`) && (
+                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">{t(`pricing.plans.${key}.disclaimer`)}</p>
+              )}
 
-          <Card className="rounded-2xl border-slate-200 shadow-sm">
-            <CardHeader><CardTitle>Enterprise</CardTitle></CardHeader>
-            <CardContent className="text-slate-600 space-y-3">
-              <p className="text-3xl font-bold">Op aanvraag</p>
-              <ul className="list-disc pl-4">
-                <li>SLA & SSO</li>
-                <li>Dedicated support</li>
-                <li>Custom security</li>
-              </ul>
-              <Link href="/contact"><Button variant="outline" className="mt-4 w-full">Contact sales</Button></Link>
-            </CardContent>
-          </Card>
+              <div className="mt-6">
+                <Link href={key === "enterprise" ? "/contact" : "/contact"}>
+                  <Button variant={featured ? "primary" : "ghost"} className="w-full">
+                    {t(`pricing.plans.${key}.cta`)}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <p className="mt-10 text-sm text-slate-500">Prijzen excl. btw. Enterprise: maatwerk & volume-korting.</p>
-      </section>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-slate-500 dark:text-slate-400">
+          {t("pricing.note")}
+        </p>
+      </Section>
     </main>
   );
 }
