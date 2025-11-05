@@ -1,4 +1,4 @@
-"use client";
+
 export const metadata = {
   title: "Privacy — CivicAI Solutions",
   description: "We respect your privacy. This page explains what we collect and how we use it.",
