@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -15,10 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-slate-50 text-slate-900 antialiased">
         <LangProvider>
           <Navbar />
-          {children}
+          <div className="mx-auto max-w-7xl px-6">{children}</div>
           <Footer />
         </LangProvider>
       </body>
     </html>
   );
 }
+

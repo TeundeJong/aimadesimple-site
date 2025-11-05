@@ -1,23 +1,20 @@
+// components/ui/button.tsx
+import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 const button = cva(
-  "inline-flex items-center justify-center rounded-lg text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center rounded-lg text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300",
   {
     variants: {
       variant: {
-        primary: "bg-blue-600 text-white hover:bg-blue-700",
-        outline: "bg-transparent text-slate-800 hover:bg-slate-100/60", // no border
-        ghost: "bg-transparent text-slate-700 hover:bg-slate-100",
+        primary: "bg-slate-900 text-white hover:bg-slate-800",
+        outline: "bg-white border border-slate-300 text-slate-900 hover:bg-slate-50",
+        link: "text-slate-900 hover:underline bg-transparent",
       },
-      size: {
-        sm: "px-3 py-2",
-        md: "px-4 py-2.5",
-        lg: "px-5 py-3 text-base"
-      }
+      size: { sm: "px-3 py-2", md: "px-4 py-2.5" },
     },
-    defaultVariants: { variant: "primary", size: "md" }
+    defaultVariants: { variant: "primary", size: "md" },
   }
 );
 
@@ -25,6 +22,6 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button> {}
 
-export function Button({ className, variant, size, ...props }: ButtonProps) {
+export default function Button({ className, variant, size, ...props }: ButtonProps) {
   return <button className={cn(button({ variant, size }), className)} {...props} />;
 }
