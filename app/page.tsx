@@ -6,6 +6,25 @@ import { useLang } from "@/lib/i18n";
 import Section from "@/components/Section";
 import Card from "@/components/ui/card";
 import Button from "@/components/ui/button";
+import React from "react";
+
+// app/page.tsx (boven in het bestand)
+
+type BadgeKey = "fast_live" | "privacy_ready" | "api_sla";
+
+const BADGES: { key: BadgeKey; icon: React.ReactNode }[] = [
+  { key: "fast_live",     icon: "⚡" },
+  { key: "privacy_ready", icon: "🔒" },
+  { key: "api_sla",       icon: "🔌" },
+] as const;
+
+// Als je service-kaarten ook op de homepage hebt:
+const HERO_CARDS: { id: "bot" | "doc" | "auto"; icon: React.ReactNode }[] = [
+  { id: "bot",  icon: "🤖" },
+  { id: "doc",  icon: "📄" },
+  { id: "auto", icon: "⚡" },
+] as const;
+
 
 export default function HomePage() {
   const { t, tList } = useLang();
@@ -28,6 +47,27 @@ export default function HomePage() {
           </div>
         </div>
 
+{/* badges */}
+<div className="flex flex-wrap gap-2">
+  {BADGES.map(({ key, icon }) => (
+    <span key={key} className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm shadow-sm border border-slate-200">
+      <span>{icon}</span>
+      {t(`badges.${key}`)}
+    </span>
+  ))}
+</div>
+
+{/* cards */}
+<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+  {HERO_CARDS.map(({ id, icon }) => (
+    <div key={id} className="rounded-2xl bg-white p-6 shadow-sm border border-slate-200">
+      <div className="text-2xl">{icon}</div>
+      <h3 className="mt-3 text-lg font-semibold">{t(`services.cards.${id}.title`)}</h3>
+      <p className="mt-2 text-sm text-slate-600">{t(`services.cards.${id}.desc`)}</p>
+    </div>
+  ))}
+</div>
+
         <div className="hidden md:block">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
             <Image
@@ -42,24 +82,23 @@ export default function HomePage() {
           <p className="text-xs text-slate-500 mt-3">{t("misc.banner_caption")}</p>
         </div>
       </section>
-
-      {/* SERVICES */}
-      <Section title={t("services.title")}>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[["bot","🤖"],["doc","📄"],["auto","⚡"]] as const].map(([k, icon]) => (
-            <Card key={k} className="p-6">
-              <div className="text-2xl">{icon}</div>
-              <h3 className="mt-2 text-lg font-semibold">{t(`services.cards.${k}.title`)}</h3>
-              <p className="mt-2 text-slate-600">{t(`services.cards.${k}.desc`)}</p>
-              <div className="mt-4">
-                <Link href="/services">
-                  <Button variant="link">{t(`services.cards.${k}.cta`)}</Button>
-                </Link>
-              </div>
-            </Card>
-          ))}
+{/* SERVICES */}
+<Section title={t("services.title")}>
+  <div className="grid md:grid-cols-3 gap-6">
+    {([["bot","🤖"],["doc","📄"],["auto","⚡"]] as const).map(([k, icon]) => (
+      <Card key={k} className="p-6">
+        <div className="text-2xl">{icon}</div>
+        <h3 className="mt-2 text-lg font-semibold">{t(`services.cards.${k}.title`)}</h3>
+        <p className="mt-2 text-slate-600">{t(`services.cards.${k}.desc`)}</p>
+        <div className="mt-4">
+          <Link href="/services">
+            <Button variant="link">{t(`services.cards.${k}.cta`)}</Button>
+          </Link>
         </div>
-      </Section>
+      </Card>
+    ))}
+  </div>
+</Section>
 
       {/* PRICING */}
       <Section title={t("pricing.title")} subtitle={t("pricing.subtitle")}>
