@@ -119,5 +119,10 @@
     "learn_more": "Meer info",
     "get_started": "Aan de slag",
     "banner_caption": "Where insight becomes action."
-  }
+  },
+
+  "notFound.title": "Pagina niet gevonden",
+  "notFound.body": "De pagina die je zoekt bestaat niet of is verplaatst.",
+  "notFound.ctaHome": "Terug naar home",
+  "notFound.ctaContact": "Contact opnemen"
 }

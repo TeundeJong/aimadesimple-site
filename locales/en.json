@@ -107,5 +107,12 @@
     "learn_more": "Learn more",
     "get_started": "Get started",
     "banner_caption": "Where insight becomes action."
-  }
+  },
+
+  
+  "notFound.title": "Page not found",
+  "notFound.body": "The page you're looking for doesn't exist or has been moved.",
+  "notFound.ctaHome": "Go to homepage",
+  "notFound.ctaContact": "Contact support"
 }
+

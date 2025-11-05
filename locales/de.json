@@ -107,5 +107,10 @@
     "learn_more": "Mehr erfahren",
     "get_started": "Loslegen",
     "banner_caption": "Wo Insight zu Handlung wird."
-  }
+  },
+  
+  "notFound.title": "Seite nicht gefunden",
+  "notFound.body": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+  "notFound.ctaHome": "Zur Startseite",
+  "notFound.ctaContact": "Kontakt aufnehmen"
 }

@@ -107,5 +107,10 @@
     "learn_more": "Saiba mais",
     "get_started": "Começar",
     "banner_caption": "Onde o insight vira ação."
-  }
+  },
+  
+  "notFound.title": "Página não encontrada",
+  "notFound.body": "A página que você procura não existe ou foi movida.",
+  "notFound.ctaHome": "Ir para a página inicial",
+  "notFound.ctaContact": "Entrar em contato"
 }
