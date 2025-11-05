@@ -1,7 +1,15 @@
-// components/ui/card.tsx
-export default function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+import React from "react";
+import { cn } from "@/lib/utils";
+
+export default function Card({
+  className,
+  children,
+}: React.PropsWithChildren<{ className?: string }>) {
   return (
-    <div className={`rounded-2xl bg-white shadow-sm border border-slate-200 ${className}`}>
+    <div className={cn(
+      "rounded-2xl bg-white shadow-sm ring-1 ring-slate-200",
+      className
+    )}>
       {children}
     </div>
   );

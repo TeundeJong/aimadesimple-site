@@ -13,23 +13,27 @@ import de from "@/locales/de.json";
 
 const DICTS: Record<Locale, any> = { nl, en, es, pt, de };
 
-// --- helpers ---------------------------------------------------------------
+/* ----------------------------- helpers ---------------------------------- */
 function getByPath(obj: any, path: string) {
   return path.split(".").reduce((acc, key) => (acc != null ? acc[key] : undefined), obj);
 }
-
 function toList(val: unknown): string[] {
   if (Array.isArray(val)) return val as string[];
-  if (typeof val === "string") {
-    return val.split("|").map((s) => s.trim()).filter(Boolean);
-  }
+  if (typeof val === "string") return val.split("|").map(s => s.trim()).filter(Boolean);
   return [];
 }
 
-// --- context ---------------------------------------------------------------
+/** ✅ MODULE-EXPORT: gebruik: tList(locale, "pricing.plans.pro.items") */
+export function tList(locale: Locale, key: string): string[] {
+  const val = getByPath(DICTS[locale], key);
+  return toList(val);
+}
+
+/* ----------------------------- context ---------------------------------- */
 type LangContext = {
   locale: Locale;
   t: (k: string) => string;
+  /** ✅ Context-variant: gebruik zonder locale door te geven */
   tList: (k: string) => string[];
   setLocale: (l: Locale) => void;
 };
@@ -45,7 +49,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("nl");
 
   useEffect(() => {
-    const c = document.cookie.split("; ").find((c) => c.startsWith("locale="));
+    const c = document.cookie.split("; ").find(c => c.startsWith("locale="));
     if (c) {
       const val = c.split("=")[1] as Locale;
       if (val && DICTS[val]) setLocale(val);
@@ -56,11 +60,8 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
     const val = getByPath(DICTS[locale], k);
     return typeof val === "string" ? val : k;
   };
-
-  const tList = (k: string) => {
-    const val = getByPath(DICTS[locale], k);
-    return toList(val);
-  };
+  /** Context-variant: pakt automatisch huidige locale */
+  const tListCtx = (k: string) => tList(locale, k);
 
   const setLocaleAndPersist = (l: Locale) => {
     setLocale(l);
@@ -68,7 +69,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LangCtx.Provider value={{ locale, t, tList, setLocale: setLocaleAndPersist }}>
+    <LangCtx.Provider value={{ locale, t, tList: tListCtx, setLocale: setLocaleAndPersist }}>
       {children}
     </LangCtx.Provider>
   );
