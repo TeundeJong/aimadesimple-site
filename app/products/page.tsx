@@ -1,3 +1,4 @@
+"use client";
 export default function ProductsPage() {
   const products = [
     { name: "CivicAI Support", from: "€99/m", blurb: "Conversational AI voor support met API-acties." },
