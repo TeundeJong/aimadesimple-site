@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* keep it minimal; no global borders/backgrounds */
-:root { color-scheme: light dark }
-html, body { height: 100% }
+/* jouw eigen globale styles */
+html, body {
+  background-color: #f9fafb; /* lichtgrijs */
+  color: #0f172a; /* slate-900 */
+  font-family: system-ui, sans-serif;
+}
