@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Section, { SectionTitle } from "@/components/Section";
 import { Button } from "@/components/ui/button";
-import { useLang } from "@/lib/i18n";
+import { useLang, tList } from "@/lib/i18n";
+
 
 export default function PricingPage() {
-  const { t } = useLang();
+const { t, locale } = useLang();
+
 
   const plans = [
     { key: "starter", featured: false },
@@ -33,7 +35,8 @@ export default function PricingPage() {
               <p className="mt-2 text-3xl font-semibold">{t(`pricing.plans.${key}.price`)}</p>
 
               <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                {(t(`pricing.plans.${key}.items`) as string[]).map((it, i) => (
+                {tList(locale, `pricing.plans.${key}.items`).map((it, i) => (
+
                   <li key={i} className="flex items-start gap-2">
                     <span className="mt-0.5">•</span>
                     <span>{it}</span>

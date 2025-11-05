@@ -29,6 +29,17 @@ const LangCtx = createContext<LangContext>({
   setLocale: () => {},
 });
 
+// kleine helper voor lijsten
+export function tList(locale: Locale, key: string): string[] {
+  const val = DICTS[locale]?.[key];
+  if (Array.isArray(val)) return val;
+  if (typeof val === "string") {
+    return val.split("|").map((s) => s.trim()).filter(Boolean);
+  }
+  return [];
+}
+
+
 // ✅ provider op module-niveau exporteren
 export function LangProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("nl");
@@ -62,3 +73,4 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
 export function useLang() {
   return useContext(LangCtx);
 }
+
