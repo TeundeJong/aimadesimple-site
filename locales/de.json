@@ -1,72 +1,67 @@
 {
   "brand": "CivicAI Solutions",
-  "tagline": "Professionelle KI-Lösungen für moderne Organisationen",
-  "claim": "Wo Insight zu Handlung wird.",
-
+  "tagline": "Professionelle KI-Lösungen für moderne Unternehmen",
+  "claim": "Wo Erkenntnis zu Handlung wird.",
   "nav": {
     "home": "Startseite",
-    "services": "Services",
+    "services": "Dienstleistungen",
     "products": "Produkte",
     "pricing": "Preise",
     "contact": "Kontakt",
-    "start": "Jetzt starten"
+    "about": "Über uns",
+    "start": "Starten"
   },
-
   "badges": {
     "fast_live": "In wenigen Tagen live",
-    "privacy_ready": "Privacy-first & DSGVO-konform",
+    "privacy_ready": "Datenschutz zuerst & DSGVO-konform",
     "api_sla": "API-Integrationen & SLA"
   },
-
   "cta": {
-    "plan_intake": "Intake buchen",
-    "view_services": "Services ansehen",
+    "plan_intake": "Termin vereinbaren",
+    "view_services": "Dienstleistungen ansehen",
     "view_pricing": "Preise ansehen",
-    "contact_us": "Kontakt aufnehmen"
+    "contact_us": "Kontaktieren Sie uns"
   },
-
   "hero": {
-    "title": "Professionelle KI-Lösungen für moderne Organisationen",
-    "subtitle": "Wir verwandeln komplexe Daten in Entscheidungen – mit praktischen KI-Integrationen, Support-Bots und smarter Automatisierung. Enterprise-ready und Privacy-first."
+    "title": "Professionelle KI-Lösungen für moderne Unternehmen",
+    "subtitle": "Wir verwandeln komplexe Daten in klare Entscheidungen mit praktischen KI-Integrationen, Support-Bots und intelligenter Automatisierung."
   },
-
   "services": {
-    "title": "Unsere Leistungen",
+    "title": "Was wir anbieten",
     "cards": {
       "bot": {
         "title": "KI-Support-Bot",
-        "desc": "Auf deinen Inhalten trainieren, 24/7 antworten und Aktionen via APIs auslösen (Tickets, Bestellungen, CRM).",
-        "cta": "Bots ansehen"
+        "desc": "Trainieren Sie mit Ihren Inhalten, antwortet 24/7 und führt Aktionen über APIs aus (Tickets, Bestellungen, CRM).",
+        "cta": "Bot-Lösungen ansehen"
       },
       "doc": {
-        "title": "Dokumenten-Analyzer",
-        "desc": "Verträge/Handbücher hochladen und sofort Risiken, Zusammenfassungen und Maßnahmen erhalten.",
-        "cta": "Analyzer ansehen"
+        "title": "Dokumentenanalysator",
+        "desc": "Laden Sie Verträge/Handbücher hoch und erhalten Sie sofort Risiken, Zusammenfassungen und Maßnahmen.",
+        "cta": "Analysator ansehen"
       },
       "auto": {
-        "title": "Automations & Integrationen",
-        "desc": "Zapier/Make, Slack, E-Mail oder CMS verbinden. Sales, Support und Onboarding beschleunigen.",
+        "title": "Automatisierungen & Integrationen",
+        "desc": "Verbinden Sie Zapier/Make, Slack, E-Mail oder Ihr CMS. Optimieren Sie Vertrieb, Support und Onboarding.",
         "cta": "Integrationen ansehen"
       }
     }
   },
-
   "pricing": {
     "title": "Einfache Preise",
     "subtitle": "Transparent, monatlich kündbar. Enterprise auf Anfrage.",
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "29 €/Monat",
+        "price": "€29/Monat",
         "cta": "Starten",
         "items": ["Basis-KI-Bot", "100 Dokumente/Monat", "E-Mail-Support"]
       },
       "pro": {
         "name": "Pro",
-        "price": "59 €/Monat",
+        "price": "€59/Monat",
         "cta": "Testen",
         "items": ["Erweiterter Bot & Aktionen", "Unbegrenzte Dokumente*", "Integrationen & Webhooks"],
-        "disclaimer": "*Fair-Use-Policy"
+        "disclaimer": "*Fair-Use-Richtlinie"
       },
       "enterprise": {
         "name": "Enterprise",
@@ -75,41 +70,37 @@
         "items": ["SLA & SSO", "Dedizierter Support", "Individuelle Sicherheit"]
       }
     },
-    "note": "Preise exkl. USt. Enterprise: Rabatte & maßgeschneiderte Lösungen."
+    "note": "Preise exkl. MwSt. Enterprise: individuelle Rabatte möglich."
   },
-
   "about": {
     "title": "Über uns",
-    "intro": "KI zählt erst, wenn Insights zu Handlung werden.",
-    "who": "CivicAI Solutions ist ein hands-on Team, das Support-Bots, Dokumenten-Intelligenz und individuelle Automatisierungen baut.",
-    "what": "Implementierung in Tagen, Privacy-first, klare KPIs und übertragbares Know-how.",
+    "intro": "Wir glauben, dass KI nur dann Wert schafft, wenn Erkenntnisse zu konkreten Handlungen führen.",
+    "who": "CivicAI Solutions ist ein kleines, praxisorientiertes Team. Wir entwickeln Support-Bots, Dokumentenanalyse und maßgeschneiderte Automatisierung, damit Teams effizienter arbeiten.",
+    "what": "Implementierung in wenigen Tagen, datenschutzorientiert, mit klaren KPIs und übertragbarem Wissen.",
     "vision": "Vision",
-    "vision_text": "Transparente, vertrauenswürdige KI, die Prozesse vereinfacht und Routinearbeit eliminiert.",
-    "roadmap": "Zukunft",
-    "roadmap_text": "Mehr Integrationen, smartere Dokumenten-Intelligenz und stärkere Enterprise-Security – ohne Komplexität."
+    "vision_text": "Transparente, zuverlässige KI, die Prozesse vereinfacht und Menschen entlastet.",
+    "roadmap": "Fahrplan",
+    "roadmap_text": "Mehr Integrationen, bessere Dokumentenintelligenz und stärkere Unternehmenssicherheit — ohne unsere Einfachheit zu verlieren."
   },
-
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Buche ein kurzes Intake – in 15 Minuten identifizieren wir deine besten KI-Chancen."
+    "subtitle": "Vereinbaren Sie ein kurzes Gespräch – in 15 Minuten identifizieren wir Ihre besten KI-Chancen."
   },
-
   "footer": {
     "rights": "© 2025 CivicAI Solutions",
     "links": {
-      "services": "Services",
+      "services": "Dienstleistungen",
       "pricing": "Preise",
       "privacy": "Datenschutz"
     }
   },
-
   "misc": {
     "learn_more": "Mehr erfahren",
     "get_started": "Loslegen",
-    "banner_caption": "Wo Insight zu Handlung wird."
+    "banner_caption": "Wo Erkenntnis zu Handlung wird."
   },
-  
   "notFound.title": "Seite nicht gefunden",
+
   "notFound.body": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
   "notFound.ctaHome": "Zur Startseite",
   "notFound.ctaContact": "Kontakt aufnehmen"
