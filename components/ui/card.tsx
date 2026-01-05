@@ -8,7 +8,9 @@ export default function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-slate-200/80 bg-white shadow-sm shadow-slate-900/10 transition-shadow hover:shadow-md hover:shadow-slate-900/10",
+        // Slightly deeper default card treatment (enterprise feel).
+        // Keep it subtle: depth comes from layered shadows + soft border tint, not heavy UI chrome.
+        "rounded-2xl border border-slate-200/70 bg-white shadow-md shadow-slate-900/10 ring-1 ring-white/60 transition-shadow hover:shadow-lg hover:shadow-slate-900/15",
         className
       )}
     >

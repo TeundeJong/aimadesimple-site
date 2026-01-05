@@ -19,7 +19,7 @@ export default function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
             <li>
               <Link className="hover:text-white" href="/products/whatsapp-ai-assistant">
-                WhatsApp AI Assistant
+                CivicAI Assistant
               </Link>
             </li>
             <li>

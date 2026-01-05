@@ -53,15 +53,15 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
                 <div className="text-sm font-semibold">Practical</div>
                 <div className="mt-1 text-sm text-slate-600">Built for daily workflows.</div>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
                 <div className="text-sm font-semibold">Secure-by-design</div>
                 <div className="mt-1 text-sm text-slate-600">Controlled systems, clear guardrails.</div>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
                 <div className="text-sm font-semibold">Reliable</div>
                 <div className="mt-1 text-sm text-slate-600">Built to run and be maintained.</div>
               </div>
@@ -81,13 +81,13 @@ export default function HomePage() {
                 <div className="relative flex h-full w-full items-center justify-center p-10">
                   <div className="relative">
                     <div className="absolute -inset-10 rounded-full bg-white/5 blur-2xl" />
-                    <div className="relative h-28 w-28 md:h-32 md:w-32 overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 shadow-sm shadow-black/40 backdrop-blur">
+                    <div className="relative h-44 w-44 md:h-48 md:w-48 overflow-hidden rounded-[32px] bg-white/5 ring-1 ring-white/10 shadow-lg shadow-black/55 backdrop-blur">
                       <Image
                         src="/civicai-icon.png"
                         alt="CivicAI Solutions"
                         fill
-                        sizes="128px"
-                        className="object-contain p-4"
+                        sizes="200px"
+                        className="object-contain p-6"
                         priority
                       />
                     </div>
@@ -150,10 +150,10 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-3">
           <Card className="p-6">
             <div className="text-xs text-teal-700">Product</div>
-            <h3 className="mt-2 text-lg font-semibold">WhatsApp AI Assistant</h3>
+            <h3 className="mt-2 text-lg font-semibold">CivicAI Assistant</h3>
             <p className="mt-2 text-sm text-slate-600">
-              Paid WhatsApp automation for service businesses—faster replies, reduced workload, and consistent customer
-              experience.
+              Managed business communication on WhatsApp—built around your workflows, with consistent handling of enquiries,
+              bookings, and handovers.
             </p>
             <div className="mt-5">
               <Link href="/products/whatsapp-ai-assistant">
@@ -173,7 +173,7 @@ export default function HomePage() {
                 <Button variant="outline">Overview</Button>
               </Link>
               <Link href="https://app.contractguardhq.com" target="_blank" rel="noreferrer">
-                <Button variant="link">Open SaaS</Button>
+                <Button>Open SaaS</Button>
               </Link>
             </div>
           </Card>

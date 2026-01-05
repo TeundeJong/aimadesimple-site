@@ -14,10 +14,10 @@ export default function ProductsPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           <Card className="p-6">
             <MessageCircle className="h-5 w-5 text-teal-700" />
-            <h3 className="mt-4 text-lg font-semibold">WhatsApp AI Assistant</h3>
+            <h3 className="mt-4 text-lg font-semibold">CivicAI Assistant</h3>
             <p className="mt-2 text-sm text-slate-600">
-              A paid WhatsApp automation platform for SMBs and service businesses—consistent replies, reduced workload,
-              and higher conversion.
+              A managed WhatsApp-based operational system that handles enquiries, bookings, follow-ups and handovers
+              automatically—built around your workflow (not a generic chatbot).
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Responds in the same language as the customer</span></li>
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                 <Button variant="outline">Overview</Button>
               </Link>
               <Link href="https://app.contractguardhq.com" target="_blank" rel="noreferrer">
-                <Button variant="link">Open SaaS</Button>
+                <Button>Open SaaS</Button>
               </Link>
             </div>
           </Card>
@@ -62,9 +62,9 @@ export default function ProductsPage() {
               industry-specific AI platforms.
             </p>
             <div className="mt-4 space-y-3 text-sm text-slate-600">
-              <div className="rounded-xl border border-slate-200 bg-white p-3">Email automation (in development)</div>
-              <div className="rounded-xl border border-slate-200 bg-white p-3">SaaS builder systems (planned)</div>
-              <div className="rounded-xl border border-slate-200 bg-white p-3">Construction AI & vertical modules (planned)</div>
+              <div className="rounded-xl border border-slate-200/70 bg-white p-3 shadow-md shadow-slate-900/10 ring-1 ring-white/60">Email automation (in development)</div>
+              <div className="rounded-xl border border-slate-200/70 bg-white p-3 shadow-md shadow-slate-900/10 ring-1 ring-white/60">SaaS builder systems (planned)</div>
+              <div className="rounded-xl border border-slate-200/70 bg-white p-3 shadow-md shadow-slate-900/10 ring-1 ring-white/60">Construction AI & vertical modules (planned)</div>
             </div>
             <div className="mt-6">
               <Link href="/contact">

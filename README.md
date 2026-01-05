@@ -34,5 +34,5 @@ POSTMARK_FROM_CONTACT=
 ```
 
 ## Notes
-- Region pricing on the WhatsApp AI Assistant page is selected automatically using request headers (Vercel/Cloudflare) with a safe fallback.
+- Region pricing on the CivicAI Assistant page is selected automatically using request headers (Vercel/Cloudflare) with a safe fallback.
 - ContractGuard AI link: `https://app.contractguardhq.com`

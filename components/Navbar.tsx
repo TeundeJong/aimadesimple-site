@@ -40,17 +40,17 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link href="/contact" className="hidden md:block">
-            <Button size="sm" variant="primary">
+            <Button size="sm">
               Business inquiry
             </Button>
           </Link>
           <Link
             href="/products/whatsapp-ai-assistant"
             className="md:hidden"
-            aria-label="View WhatsApp AI Assistant"
+            aria-label="View CivicAI Assistant"
           >
             <Button size="sm" variant="outline">
-              WhatsApp AI
+              Assistant
             </Button>
           </Link>
         </div>
