@@ -21,6 +21,7 @@ export default function Navbar() {
               fill
               sizes="36px"
               className="object-contain p-1"
+              unoptimized
               priority
             />
           </div>

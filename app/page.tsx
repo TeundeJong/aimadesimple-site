@@ -21,6 +21,7 @@ export default function HomePage() {
                   fill
                   sizes="44px"
                   className="object-contain p-1.5"
+                  unoptimized
                   priority
                 />
               </div>
@@ -88,6 +89,7 @@ export default function HomePage() {
                         fill
                         sizes="200px"
                         className="object-contain p-6"
+                        unoptimized
                         priority
                       />
                     </div>
