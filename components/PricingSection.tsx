@@ -1,293 +1,255 @@
-import React from "react";
-import { Check, X, Sparkles } from "lucide-react";
+// components/PricingSection.tsx
+"use client";
 
-/**
- * PricingSection – reusable pricing table for multiple product variants.
- * Usage:
- *   <PricingSection variant="chatbot" />
- *   <PricingSection variant="support" />
- *   <PricingSection variant="docs" />
- *   <PricingSection variant="automate" />
- */
+import React from "react";
+import { prices } from "@/lib/stripePrices";
 
 export type Variant = "chatbot" | "support" | "docs" | "automate";
 
-const catalog: Record<Variant, {
-  title: string;
-  subtitle: string;
-  disclaimer?: string;
-  plans: Array<{
-    name: string;
-    price: string;
-    period: string;
-    highlight?: boolean;
-    setup?: string;
-    features: Array<string | { label: string; ok: boolean }>
-  }>;
-}> = {
-  /** White‑label Chatbot (je eerdere prijzen) */
+type PlanKey =
+  | "starter"
+  | "growth"
+  | "scale"
+  | "pro"
+  | "business";
+
+type DisplayPlan = {
+  key: PlanKey;
+  name: string;
+  monthly: string;   // pretty label for UI
+  yearly: string;    // pretty label for UI
+  setup: string;     // pretty label for UI
+  features: string[];
+  highlight?: boolean;
+};
+
+const catalog: Record<Variant, { title: string; subtitle: string; plans: DisplayPlan[] }> = {
   chatbot: {
-    title: "White‑Label Chatbot",
-    subtitle: "Niet de goedkoopste of duurste — gewoon fair, schaalbaar en aantrekkelijk.",
-    disclaimer: "Jaarlijks afnemen? 15% korting. Overage: $0.75/100 AI‑berichten of $0.90 per succesvolle AI‑resolutie.",
+    title: "White-Label Chatbot",
+    subtitle: "Fair, scalable pricing — with a 15% discount on yearly billing.",
     plans: [
       {
+        key: "starter",
         name: "Starter",
-        price: "$39",
-        period: "/mo",
-        setup: "$199 setup",
+        monthly: "€39/mo",
+        yearly: "€397.80/yr (15% off)",
+        setup: "€199 setup",
         features: [
-          { label: "1 kennisbron (RAG)", ok: true },
-          { label: "3.000 AI‑berichten / maand", ok: true },
-          { label: "Branding verwijderen", ok: false },
-          { label: "Meerdere sites/bots", ok: false },
-          "Basis analytics",
-          { label: "SSO (SAML/OIDC)", ok: false },
-          "E‑mail support",
+          "1 AI source (RAG)",
+          "Up to 3,000 messages/month",
+          "Basic analytics",
+          "Remove branding (upgrade)",
         ],
       },
       {
+        key: "growth",
         name: "Growth",
-        price: "$99",
-        period: "/mo",
-        highlight: true,
-        setup: "$399 setup",
+        monthly: "€99/mo",
+        yearly: "€1,009.80/yr (15% off)",
+        setup: "€399 setup",
         features: [
-          { label: "5 kennisbronnen", ok: true },
-          { label: "15.000 AI‑berichten / maand", ok: true },
-          { label: "Branding verwijderen", ok: true },
-          { label: "Meerdere bots", ok: true },
-          "Uitgebreide analytics + exports",
-          { label: "SSO (SAML/OIDC)", ok: false },
-          "E‑mail + chat support",
+          "5 AI sources",
+          "Up to 15,000 messages/month",
+          "Remove branding",
+          "Webhooks/API integrations",
+          "Extended analytics",
         ],
+        highlight: true,
       },
       {
-        name: "Scale / White‑Label",
-        price: "$249",
-        period: "/mo",
-        setup: "$999 setup",
+        key: "scale",
+        name: "Scale / White-Label",
+        monthly: "€249/mo",
+        yearly: "€2,538.60/yr (15% off)",
+        setup: "€999 setup",
         features: [
-          { label: "Volledig whitelabel (logo, domein)", ok: true },
-          { label: "20 kennisbronnen", ok: true },
-          { label: "50.000 AI‑berichten / maand", ok: true },
-          { label: "Onbeperkt sites/bots (multi‑tenant)", ok: true },
-          "Aangepaste integraties & webhooks",
-          { label: "SSO (SAML/OIDC)", ok: true },
-          "SLA / prioriteitssupport",
+          "Full white-label (logo, domain)",
+          "Unlimited bots (multi-tenant)",
+          "Custom integrations",
+          "SSO + SLA",
         ],
       },
     ],
   },
 
-  /** CivicAI Support – supportbot + ticketing focus (iets hoger geprijsd) */
   support: {
     title: "CivicAI Support",
-    subtitle: "Conversational AI voor klantenservice, met hand‑off en tickets.",
+    subtitle: "AI helpdesk with ticketing — yearly plan saves 15%.",
     plans: [
       {
+        key: "starter",
         name: "Starter",
-        price: "$49",
-        period: "/mo",
-        setup: "$249 setup",
-        features: [
-          { label: "FAQ‑flow + hand‑off e‑mail", ok: true },
-          { label: "1 kanaal (widget)", ok: true },
-          { label: "Branding verwijderen", ok: false },
-          { label: "Ticketing", ok: false },
-          "Basis analytics",
-          { label: "SSO", ok: false },
-        ],
+        monthly: "€49/mo",
+        yearly: "€499.80/yr (15% off)",
+        setup: "€249 setup",
+        features: ["FAQ flow + email hand-off", "1 channel (widget)", "Basic analytics"],
       },
       {
+        key: "growth",
         name: "Growth",
-        price: "$129",
-        period: "/mo",
+        monthly: "€129/mo",
+        yearly: "€1,317.60/yr (15% off)",
+        setup: "€399 setup",
+        features: ["Multi-channel", "Agent hand-off + ticketing", "Integrations", "Advanced analytics"],
         highlight: true,
-        setup: "$399 setup",
-        features: [
-          { label: "Meerdere kanalen (widget + e‑mail)", ok: true },
-          { label: "Agent hand‑off + eenvoudige tickets", ok: true },
-          { label: "Branding verwijderen", ok: true },
-          { label: "Integraties (Zapier/Webhooks)", ok: true },
-          "Uitgebreide analytics",
-          { label: "SSO", ok: false },
-        ],
       },
       {
+        key: "scale",
         name: "Scale",
-        price: "$299",
-        period: "/mo",
-        setup: "$999 setup",
-        features: [
-          { label: "Volledige ticketing + SLA", ok: true },
-          { label: "Omnichannel (widget, e‑mail, WhatsApp)", ok: true },
-          { label: "Workflows & auto‑routing", ok: true },
-          { label: "Integraties (CRM/HubSpot/Zendesk)", ok: true },
-          { label: "SSO (SAML/OIDC)", ok: true },
-        ],
+        monthly: "€299/mo",
+        yearly: "€3,046.20/yr (15% off)",
+        setup: "€999 setup",
+        features: ["Omnichannel + CRM", "Workflows & auto-routing", "SSO", "SLA"],
       },
     ],
   },
 
-  /** CivicAI Docs – document/contract analyse */
   docs: {
     title: "CivicAI Docs",
-    subtitle: "Contract‑ & handleiding‑analyse met risico’s en actiepunten.",
+    subtitle: "Contract & manual analysis — yearly plan saves 15%.",
     plans: [
       {
+        key: "starter",
         name: "Starter",
-        price: "$29",
-        period: "/mo",
-        setup: "$149 setup",
-        features: [
-          { label: "Tot 3 documenten / maand", ok: true },
-          { label: "Basis extracties (clausules/risico’s)", ok: true },
-          { label: "Branding verwijderen", ok: false },
-          "Basis exports (PDF)",
-        ],
+        monthly: "€29/mo",
+        yearly: "€295.80/yr (15% off)",
+        setup: "€149 setup",
+        features: ["Up to 3 docs/month", "Clause & risk extraction", "PDF export"],
       },
       {
+        key: "pro",
         name: "Pro",
-        price: "$79",
-        period: "/mo",
+        monthly: "€79/mo",
+        yearly: "€805.80/yr (15% off)",
+        setup: "€249 setup",
+        features: ["Up to 40 docs/month", "Detailed scoring", "Webhooks", "CSV/JSON exports"],
         highlight: true,
-        setup: "$249 setup",
-        features: [
-          { label: "Tot 40 documenten / maand", ok: true },
-          { label: "Uitgebreide extracties + scores", ok: true },
-          { label: "Branding verwijderen", ok: true },
-          "CSV/JSON exports + webhooks",
-        ],
       },
       {
+        key: "business",
         name: "Business",
-        price: "$199",
-        period: "/mo",
-        setup: "$599 setup",
-        features: [
-          { label: "Tot 200 documenten / maand", ok: true },
-          { label: "Team‑workflows & review", ok: true },
-          { label: "Integraties (Drive/SharePoint)", ok: true },
-          { label: "SSO + auditlog", ok: true },
-        ],
+        monthly: "€199/mo",
+        yearly: "€2,029.80/yr (15% off)",
+        setup: "€599 setup",
+        features: ["Up to 200 docs/month", "Team workflows & review", "Integrations (Drive/SharePoint)", "SSO + audit log"],
       },
     ],
   },
 
-  /** CivicAI Automate – workflow‑automation & actions */
   automate: {
     title: "CivicAI Automate",
-    subtitle: "Workflow‑automatisering en integraties op basis van AI‑acties.",
+    subtitle: "Workflow automation & integrations — yearly plan saves 15%.",
     plans: [
       {
+        key: "starter",
         name: "Starter",
-        price: "$79",
-        period: "/mo",
-        setup: "$299 setup",
-        features: [
-          { label: "2 automatiseringen", ok: true },
-          { label: "Webhook‑acties", ok: true },
-          { label: "Branding verwijderen", ok: false },
-          { label: "Scheduler/cron", ok: false },
-        ],
+        monthly: "€79/mo",
+        yearly: "€805.80/yr (15% off)",
+        setup: "€299 setup",
+        features: ["2 automations", "Webhook actions", "Basic scheduler"],
       },
       {
+        key: "growth",
         name: "Growth",
-        price: "$149",
-        period: "/mo",
+        monthly: "€149/mo",
+        yearly: "€1,519.80/yr (15% off)",
+        setup: "€499 setup",
+        features: ["10 automations", "Zapier/Make", "Scheduler + retries", "Remove branding"],
         highlight: true,
-        setup: "$499 setup",
-        features: [
-          { label: "10 automatiseringen", ok: true },
-          { label: "Integraties (Zapier/Make)", ok: true },
-          { label: "Branding verwijderen", ok: true },
-          { label: "Scheduler/cron + retries", ok: true },
-        ],
       },
       {
+        key: "scale",
         name: "Scale",
-        price: "$349",
-        period: "/mo",
-        setup: "$1.499 setup",
-        features: [
-          { label: "Onbeperkt automatiseringen", ok: true },
-          { label: "Directe API‑integraties (CRM/ERP)", ok: true },
-          { label: "Queue & monitoring", ok: true },
-          { label: "SSO + RBAC", ok: true },
-        ],
+        monthly: "€349/mo",
+        yearly: "€3,553.80/yr (15% off)",
+        setup: "€1,499 setup",
+        features: ["Unlimited automations", "Direct API integrations", "Monitoring/queues", "SSO + RBAC"],
       },
     ],
   },
 };
 
-function FeatureItem({ f }: { f: string | { label: string; ok: boolean } }) {
-  if (typeof f === "string") {
-    return (
-      <li className="flex items-start gap-2 text-gray-700">
-        <Check className="mt-0.5" size={16} /> {f}
-      </li>
-    );
-  }
-  return (
-    <li className="flex items-start gap-2 text-gray-700">
-      {f.ok ? (
-        <Check className="mt-0.5 text-green-700" size={16} />
-      ) : (
-        <X className="mt-0.5 text-gray-400" size={16} />
-      )}
-      <span>{f.label}</span>
-    </li>
-  );
-}
-
-function PlanCard({ p }: { p: (typeof catalog)[Variant]["plans"][number] }) {
-  return (
-    <div className={`rounded-2xl border shadow-sm p-6 bg-white flex flex-col ${p.highlight ? "ring-2 ring-black" : ""}`}>
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-xl font-semibold">{p.name}</h3>
-        {p.highlight && (
-          <span className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-black text-white"><Sparkles size={14}/> Most popular</span>
-        )}
-      </div>
-      <div className="flex items-baseline gap-1 mb-1">
-        <span className="text-3xl font-bold">{p.price}</span>
-        <span className="text-gray-600">{p.period}</span>
-      </div>
-      {p.setup && <div className="text-gray-700 mb-3">{p.setup}</div>}
-      <ul className="space-y-2 mb-5">
-        {p.features.map((f, i) => (
-          <FeatureItem key={i} f={f} />
-        ))}
-      </ul>
-      <button
-        className={`mt-auto w-full rounded-xl px-4 py-2 font-medium border ${p.highlight ? "bg-black text-white border-black" : "bg-white hover:bg-gray-50"}`}
-        onClick={() => alert(`TODO: link Stripe Checkout for ${p.name}`)}
-      >
-        Kies {p.name}
-      </button>
-    </div>
-  );
+async function goCheckout(recurringPriceId: string, setupPriceId?: string) {
+  const res = await fetch("/api/stripe/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ recurringPriceId, setupPriceId }),
+  });
+  const data = await res.json();
+  if (data.url) window.location.href = data.url;
+  else alert("Checkout error");
 }
 
 export default function PricingSection({ variant = "chatbot" as Variant }) {
+  const [yearly, setYearly] = React.useState(false);
   const data = catalog[variant];
+
+  // Helper to resolve price IDs from config
+  function idsFor(planKey: PlanKey) {
+    const set = (prices as any)[variant][planKey];
+    if (!set) return null;
+    return { recurring: yearly ? set.year : set.month, setup: set.setup };
+    // monthly -> set.month, yearly -> set.year
+  }
+
   return (
     <section className="py-10">
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h2 className="text-3xl md:text-4xl font-bold">{data.title}</h2>
         <p className="text-gray-600 mt-2">{data.subtitle}</p>
+
+        {/* Toggle */}
+        <div className="inline-flex mt-5 items-center gap-2 rounded-xl border px-2 py-1">
+          <button
+            className={`px-3 py-1 rounded-lg text-sm ${!yearly ? "bg-black text-white" : "hover:bg-gray-100"}`}
+            onClick={() => setYearly(false)}
+          >
+            Monthly
+          </button>
+          <button
+            className={`px-3 py-1 rounded-lg text-sm ${yearly ? "bg-black text-white" : "hover:bg-gray-100"}`}
+            onClick={() => setYearly(true)}
+          >
+            Yearly <span className="ml-1 text-xs opacity-80">(15% off)</span>
+          </button>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        {data.plans.map((p) => (
-          <PlanCard key={p.name} p={p} />
-        ))}
+        {data.plans.map((p) => {
+          const ids = idsFor(p.key);
+          const priceLabel = yearly ? p.yearly : p.monthly;
+          return (
+            <div
+              key={p.key}
+              className={`rounded-2xl border shadow-sm p-6 bg-white flex flex-col ${p.highlight ? "ring-2 ring-black" : ""}`}
+            >
+              <h3 className="text-xl font-semibold">{p.name}</h3>
+              <div className="flex items-baseline gap-2 mt-2 mb-2">
+                <span className="text-3xl font-bold">{priceLabel}</span>
+              </div>
+              <div className="text-gray-700 mb-4">{p.setup}</div>
+              <ul className="space-y-2 mb-5 text-gray-700">
+                {p.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span>•</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                className={`mt-auto w-full rounded-xl px-4 py-2 font-medium border ${p.highlight ? "bg-black text-white border-black" : "bg-white hover:bg-gray-50"}`}
+                onClick={() => {
+                  if (!ids) return alert("Stripe price IDs not configured yet.");
+                  goCheckout(ids.recurring, ids.setup);
+                }}
+              >
+                Subscribe {yearly ? "Yearly" : "Monthly"}
+              </button>
+            </div>
+          );
+        })}
       </div>
-
-      {data.disclaimer && (
-        <p className="text-sm text-gray-500 mt-4 text-center">* {data.disclaimer}</p>
-      )}
     </section>
   );
 }

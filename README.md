@@ -1,30 +1,38 @@
-# CivicAI Solutions — Landing Page
+# CivicAI Solutions Pty Ltd — Holding Company Website
 
-A clean, bilingual (NL/EN) Next.js landing page with TailwindCSS and minimal UI components.
+Enterprise-grade, minimal Next.js website for **CivicAI Solutions Pty Ltd** (parent company).
 
-## Quickstart
+## Pages
+- `/` Home
+- `/about` About
+- `/products` Products overview
+- `/products/whatsapp-ai-assistant` Product page (only page with pricing)
+- `/products/contractguard-ai` Product page with CTA to the SaaS app
+- `/contact` Business inquiry form
+- `/privacy` Basic privacy statement
+- `/terms` Website terms
+- `/refund-policy` Refund policy (no refunds)
+
+## Local development
+
 ```bash
-# In an empty folder (Next 14)
-npx create-next-app@latest .
-# overwrite files in /app, /components, /lib with the ones from this package
-npm install framer-motion lucide-react tailwindcss postcss autoprefixer
-npx tailwindcss init -p  # (if missing)
-# then run
+npm install
 npm run dev
 ```
 
-## Files included
-- app/layout.tsx
-- app/page.tsx
-- app/privacy/page.tsx
-- app/globals.css
-- components/ui/button.tsx, card.tsx, input.tsx
-- lib/utils.ts
-- tailwind.config.ts
-- postcss.config.js
-- vercel.json
+Open `http://localhost:3000`.
 
-## Customize
-- Replace Stripe checkout links in `app/page.tsx`
-- Add your bot widget script/iframe in the hero's demo box
-- Update metadata and email in `layout.tsx` and CTA
+## Contact form
+The contact form posts to a Next.js Route Handler at `app/api/contact/route.ts` and sends emails via Postmark.
+
+Required environment variables:
+
+```bash
+POSTMARK_API_KEY=
+POSTMARK_FROM_AUTH=
+POSTMARK_FROM_CONTACT=
+```
+
+## Notes
+- Region pricing on the WhatsApp AI Assistant page is selected automatically using request headers (Vercel/Cloudflare) with a safe fallback.
+- ContractGuard AI link: `https://app.contractguardhq.com`

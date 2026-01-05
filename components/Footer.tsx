@@ -1,36 +1,75 @@
-"use client";
 import Link from "next/link";
-import { useLang } from "@/lib/i18n";
 
 export default function Footer() {
-  const { locale, setLocale } = useLang();
-  const { t } = useLang()
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 text-sm sm:grid-cols-3">
+    <footer className="mt-16 border-t border-slate-200/70 bg-slate-950 text-slate-100">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 sm:grid-cols-3">
         <div>
-          <div className="font-semibold">{t("brand")}</div>
-          <p className="mt-2 text-slate-600">{t("tag")}</p>
+          <div className="text-sm font-semibold tracking-tight">CivicAI Solutions Pty Ltd</div>
+          <p className="mt-3 max-w-sm text-sm text-slate-300">
+            We build and operate focused software systems that remove friction from day-to-day business operations.
+          </p>
+          <p className="mt-4 max-w-sm text-xs text-slate-400">
+            This website is provided for general information only and does not constitute professional, legal, or financial advice.
+          </p>
         </div>
+
         <div>
-          <div className="font-medium">Product</div>
-          <ul className="mt-2 space-y-1">
-            <li><Link className="hover:text-blue-600" href="/services">Services</Link></li>
-            <li><Link className="hover:text-blue-600" href="/products">Products</Link></li>
-            <li><Link className="hover:text-blue-600" href="/pricing">Pricing</Link></li>
+          <div className="text-sm font-semibold">Products</div>
+          <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <li>
+              <Link className="hover:text-white" href="/products/whatsapp-ai-assistant">
+                WhatsApp AI Assistant
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/products/contractguard-ai">
+                ContractGuard AI
+              </Link>
+            </li>
+            <li className="text-slate-400">More modules coming soon</li>
           </ul>
         </div>
+
         <div>
-          <div className="font-medium">Company</div>
-          <ul className="mt-2 space-y-1">
-            <li><Link className="hover:text-blue-600" href="/about">About</Link></li>
-            <li><Link className="hover:text-blue-600" href="/contact">Contact</Link></li>
-            <li><Link className="hover:text-blue-600" href="/privacy">Privacy</Link></li>
+          <div className="text-sm font-semibold">Company</div>
+          <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <li>
+              <Link className="hover:text-white" href="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/products">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/contact">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/privacy">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/terms">
+                Terms
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-white" href="/refund-policy">
+                Refund policy
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-6 pb-10 text-xs text-slate-500">
-        © {new Date().getFullYear()} CivicAI Solutions. All rights reserved.
+
+      <div className="mx-auto max-w-7xl px-6 pb-10 text-xs text-slate-500">
+        © {new Date().getFullYear()} CivicAI Solutions Pty Ltd. All rights reserved. No refunds.
       </div>
     </footer>
   );

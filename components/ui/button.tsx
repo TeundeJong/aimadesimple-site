@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
-import { cn } from "@/lib/utils"; // of vervang met eigen merge util
 
-type Variant = "primary" | "secondary" | "ghost" | "link" | "outline";
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+type Variant = "primary" | "outline" | "ghost" | "link";
 type Size = "sm" | "md" | "lg";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -11,19 +12,14 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const base =
-  "inline-flex items-center justify-center rounded-xl font-medium transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center rounded-xl font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/40 disabled:opacity-50 disabled:pointer-events-none";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-slate-900 text-white hover:bg-slate-800 active:bg-slate-900",
-  secondary:
-    "bg-slate-100 text-slate-900 hover:bg-slate-200 active:bg-slate-100",
+  primary: "bg-gradient-to-b from-teal-600 to-teal-700 text-white shadow-sm shadow-teal-900/20 hover:from-teal-600 hover:to-teal-800",
   outline:
-    "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50",
-  ghost:
-    "bg-white/70 text-slate-900 hover:bg-white",
-  link:
-    "bg-transparent text-slate-900 underline-offset-4 hover:underline shadow-none",
+    "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50",
+  ghost: "bg-transparent text-slate-900 hover:bg-slate-100",
+  link: "bg-transparent text-teal-700 hover:text-teal-800 underline-offset-4 hover:underline",
 };
 
 const sizes: Record<Size, string> = {
@@ -32,7 +28,7 @@ const sizes: Record<Size, string> = {
   lg: "h-12 px-5 text-base",
 };
 
-export function Button({
+export default function Button({
   className,
   variant = "primary",
   size = "md",
@@ -45,4 +41,3 @@ export function Button({
     />
   );
 }
-export default Button; // zowel default als named export beschikbaar
