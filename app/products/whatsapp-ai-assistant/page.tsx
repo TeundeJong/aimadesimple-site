@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { Check, Calendar, BadgeCheck, MessageCircle, ArrowRight } from "lucide-react";
+import { Check, Calendar, BadgeCheck, MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import Section from "@/components/Section";
 import Card from "@/components/ui/card";
 import Button from "@/components/ui/button";
+import CheckoutButton from "@/components/CheckoutButton";
 import { getPricingCurrencyFromRequestHeaders } from "@/lib/geo";
 
 const features = [
-  "Workflow-aware replies and routing (enquiries, quotes, bookings)",
-  "Built-in handover paths (human takeover when needed)",
-  "Consistent tone, safe guardrails, and no outbound spam",
-  "Handles follow-ups automatically—without changing how you work",
-  "Message logging for operational visibility and accountability",
-  "Managed onboarding, configuration, monitoring, and ongoing support",
+  "Route inbound messages by workflow (enquiries, quotes, bookings)",
+  "Consistent tone + guardrails (no spam, no hallucinated promises)",
+  "Built-in handover path when a human should take over",
+  "Follow-ups and reminders handled automatically",
+  "Conversation logging for operational visibility",
+  "Managed onboarding, configuration, monitoring, and support",
 ];
 
 type Price = {
@@ -82,23 +83,21 @@ export default async function WhatsAppAIAssistantPage() {
               </p>
             </div>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
-                <div className="text-sm font-semibold">Typical chatbot</div>
-                <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Generic replies and unpredictable tone</span></li>
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>One-size-fits-all flows</span></li>
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Little ownership once it’s ‘set up’</span></li>
-                </ul>
+            <div className="mt-6 rounded-2xl border border-slate-200/70 bg-white p-5 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="h-5 w-5 text-teal-700" />
+                <div className="text-sm font-semibold">Not a generic chatbot</div>
               </div>
-              <div className="rounded-2xl border border-slate-200/70 bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.9),rgba(224,231,255,0.25),rgba(240,253,250,0.45))] p-5 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
-                <div className="text-sm font-semibold">CivicAI Assistant</div>
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Configured per client: workflow, tone, and rules</span></li>
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>End-to-end handling (enquiries → booking → follow-up → handover)</span></li>
-                  <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Managed delivery with monitoring and accountability</span></li>
-                </ul>
-              </div>
+              <p className="mt-2 text-sm text-slate-600">
+                This is a managed assistant system: configured per business, monitored in production, and designed to keep
+                conversations structured.
+              </p>
+              <ul className="mt-3 grid gap-2 text-sm text-slate-700 md:grid-cols-2">
+                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Configured flows (enquiry → booking → follow-up)</span></li>
+                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Guardrails + handover to a human when needed</span></li>
+                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Operational visibility (message logging)</span></li>
+                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Managed onboarding and ongoing support</span></li>
+              </ul>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -153,26 +152,34 @@ export default async function WhatsAppAIAssistantPage() {
             <div className="mt-8">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <Calendar className="h-4 w-4 text-teal-700" />
-                Calendar add-ons
+                Calendar scheduling (included)
               </div>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Calendar Read</span></li>
-                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Calendar Write</span></li>
-                <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Read + Write</span></li>
-              </ul>
-              <p className="mt-3 text-xs text-slate-500">
-                Add-ons are activated per deployment based on your use case and permissions required.
-              </p>
+              <div className="mt-3 rounded-2xl border border-slate-200/70 bg-slate-50 p-4 text-sm text-slate-700 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
+                <div className="grid gap-2">
+                  <div><span className="font-semibold">Calendar Read</span>: the assistant can read availability to propose times.</div>
+                  <div><span className="font-semibold">Calendar Write</span>: the assistant can create/update bookings (with permission).</div>
+                  <div><span className="font-semibold">Read + Write</span>: full scheduling flow end-to-end.</div>
+                </div>
+                <div className="mt-3 text-xs text-slate-500">
+                  Included in the subscription. Enabled during onboarding based on your use-case and required permissions.
+                </div>
+              </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
+              <div className="text-xs font-semibold text-slate-700">Secure billing</div>
+              <div className="mt-1 text-sm text-slate-600">Payments are processed securely via Stripe.</div>
+            </div>
+
+            <div className="mt-8 space-y-3">
+              <CheckoutButton currency={price.currency} className="w-full" />
               <Link href="/contact">
-                <Button className="w-full" size="lg">
+                <Button className="w-full" size="lg" variant="outline">
                   Start a business inquiry
                 </Button>
               </Link>
-              <p className="mt-3 text-xs text-slate-500">
-                Final invoicing currency can be aligned during onboarding when required.
+              <p className="text-xs text-slate-500">
+                After purchase, we will contact you to schedule onboarding and enable the right options for your business.
               </p>
             </div>
           </Card>

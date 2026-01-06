@@ -22,7 +22,7 @@ export default function ProductsPage() {
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Responds in the same language as the customer</span></li>
               <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Guardrails to prevent spam and keep replies on-policy</span></li>
-              <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Optional calendar add-ons (read/write)</span></li>
+              <li className="flex items-start gap-2"><span className="mt-0.5">•</span><span>Calendar scheduling (read/write) included — enabled during onboarding</span></li>
             </ul>
             <div className="mt-6">
               <Link href="/products/whatsapp-ai-assistant">
