@@ -23,6 +23,7 @@ export default function Navbar() {
               className="object-contain p-1"
               quality={100}
               priority
+              unoptimized
             />
           </div>
           <div className="leading-tight">

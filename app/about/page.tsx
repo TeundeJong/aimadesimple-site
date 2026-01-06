@@ -61,8 +61,19 @@ export default function AboutPage() {
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
               <div className="text-sm font-semibold">Long-term vision</div>
               <p className="mt-2 text-sm text-slate-600">
-                A portfolio of enterprise-grade AI platforms—each focused on a clear business domain and designed to
-                scale.
+                Our long-term mission is to help improve access to healthcare, nutritious food, and clean water in remote
+                and underserved communities. Longer term, this connects to initiatives like HealthHub Pods and off-grid
+                food &amp; water supply systems—projects that require major sponsorship and investment to scale. We’re
+                building dependable software first so we can fund these outcomes ourselves and stay independent.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
+              <div className="text-sm font-semibold">Climate commitment</div>
+              <p className="mt-2 text-sm text-slate-600">
+                We allocate 1% of revenue from this product line to climate action—focused on reducing CO₂ impact (for
+                example, carbon removal and verified climate projects). It’s a small step, but we want to build
+                responsibly as we scale.
               </p>
             </div>
           </Card>

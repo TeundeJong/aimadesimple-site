@@ -171,6 +171,11 @@ export default async function WhatsAppAIAssistantPage() {
               <div className="mt-1 text-sm text-slate-600">Payments are processed securely via Stripe.</div>
             </div>
 
+            <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-md shadow-slate-900/10 ring-1 ring-white/60">
+              <div className="text-xs font-semibold text-slate-700">Climate</div>
+              <div className="mt-1 text-sm text-slate-600">We allocate 1% of revenue to climate action focused on CO₂ impact reduction.</div>
+            </div>
+
             <div className="mt-8 space-y-3">
               <CheckoutButton currency={price.currency} className="w-full" />
               <Link href="/contact">

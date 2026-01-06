@@ -22,6 +22,7 @@ export default function HomePage() {
                   sizes="44px"
                   className="object-contain p-1.5"
                   quality={100}
+                  unoptimized
                   priority
                 />
               </div>
@@ -82,15 +83,16 @@ export default function HomePage() {
                 <div className="relative flex h-full w-full items-center justify-center p-10">
                   <div className="relative">
                     <div className="absolute -inset-10 rounded-full bg-white/5 blur-2xl" />
-                    <div className="relative h-44 w-44 md:h-48 md:w-48 overflow-hidden rounded-[32px] bg-white/5 ring-1 ring-white/10 shadow-lg shadow-black/55 backdrop-blur">
+                    <div className="relative h-44 w-44 md:h-48 md:w-48 overflow-hidden rounded-[32px] bg-white/5 ring-1 ring-white/10 shadow-lg shadow-black/55">
                       <Image
                         src="/civicai-icon.png"
                         alt="CivicAI Solutions"
                         fill
                         sizes="200px"
-                        className="object-contain p-6"
+                        className="object-contain p-3"
                         quality={100}
                         priority
+                        unoptimized
                       />
                     </div>
                     <div className="pointer-events-none absolute -right-16 -top-10 h-40 w-40 rounded-full bg-teal-400/10 blur-2xl" />

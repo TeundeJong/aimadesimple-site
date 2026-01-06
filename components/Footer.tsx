@@ -9,6 +9,9 @@ export default function Footer() {
           <p className="mt-3 max-w-sm text-sm text-slate-300">
             We build and operate focused software systems that remove friction from day-to-day business operations.
           </p>
+          <p className="mt-3 max-w-sm text-xs text-slate-400">
+            1% of revenue is allocated to climate action focused on CO₂ impact reduction.
+          </p>
           <p className="mt-4 max-w-sm text-xs text-slate-400">
             This website is provided for general information only and does not constitute professional, legal, or financial advice.
           </p>
