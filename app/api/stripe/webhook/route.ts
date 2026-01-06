@@ -2,12 +2,14 @@
 import { NextRequest } from "next/server";
 import Stripe from "stripe";
 
+import { getStripe } from "@/lib/stripe";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
-});
+// NOTE: We intentionally do NOT initialize Stripe at module load.
+// This route may receive webhooks from either the EU or AU Stripe account.
+// We determine which webhook secret matches, then instantiate Stripe with the corresponding secret key.
 
 async function sendPostmarkEmail(params: {
   apiKey: string;
@@ -44,18 +46,37 @@ export async function POST(req: NextRequest) {
   // 1) Read raw body (required for Stripe signature verification)
   const rawBody = await req.text();
   const sig = req.headers.get("stripe-signature");
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-
-  if (!sig || !webhookSecret) {
-    return new Response("Missing signature or webhook secret", { status: 400 });
+  if (!sig) {
+    return new Response("Missing stripe-signature header", { status: 400 });
   }
 
-  let event: Stripe.Event;
-  try {
-    event = stripe.webhooks.constructEvent(rawBody, sig, webhookSecret);
-  } catch (err: any) {
-    console.error("❌ Webhook signature verification failed:", err.message);
-    return new Response(`Webhook Error: ${err.message}`, { status: 400 });
+  // Support both legacy single-secret and per-region secrets.
+  // We try each configured secret until one verifies the signature.
+  const secretCandidates: Array<{ secret: string | undefined; currency: "EUR" | "AUD" | null }> = [
+    { secret: process.env.STRIPE_WEBHOOK_SECRET, currency: null },
+    { secret: process.env.STRIPE_EU_WEBHOOK_SECRET, currency: "EUR" },
+    { secret: process.env.STRIPE_AU_WEBHOOK_SECRET, currency: "AUD" },
+  ];
+
+  let event: Stripe.Event | null = null;
+  let stripe = null as ReturnType<typeof getStripe>;
+
+  for (const cand of secretCandidates) {
+    if (!cand.secret) continue;
+    const client = getStripe(cand.currency);
+    if (!client) continue;
+    try {
+      event = client.webhooks.constructEvent(rawBody, sig, cand.secret);
+      stripe = client;
+      break;
+    } catch {
+      // Try next secret
+    }
+  }
+
+  if (!event || !stripe) {
+    console.error("❌ Webhook signature verification failed (no matching secret)");
+    return new Response("Webhook Error: signature verification failed", { status: 400 });
   }
 
   // 2) Handle the events you care about on the website

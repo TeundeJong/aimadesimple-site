@@ -4,9 +4,6 @@ import { getStripe } from "@/lib/stripe";
 import { getPricingCurrencyFromRequestHeaders } from "@/lib/geo";
 
 export async function POST(req: NextRequest) {
-  const stripe = getStripe();
-  if (!stripe) return new Response("Stripe not configured", { status: 400 });
-
   const body = await req.json().catch(() => ({}));
   const recurringPriceId = typeof body?.recurringPriceId === "string" ? body.recurringPriceId : "";
   const setupPriceId = typeof body?.setupPriceId === "string" ? body.setupPriceId : "";
@@ -24,8 +21,14 @@ export async function POST(req: NextRequest) {
 
   // New minimal path: WhatsApp Assistant checkout without hardcoding price IDs.
   // We resolve the active recurring monthly price using Stripe product metadata.
+  // Decide currency early so we can select the correct Stripe account.
+  const inferredCurrency = requestedCurrency ?? (await getPricingCurrencyFromRequestHeaders());
+
+  const stripe = getStripe(inferredCurrency);
+  if (!stripe) return new Response("Stripe not configured", { status: 400 });
+
   if (!resolvedRecurringPriceId && productType === "whatsapp_assistant") {
-    const currency = requestedCurrency ?? (await getPricingCurrencyFromRequestHeaders());
+    const currency = inferredCurrency;
     const region = currency === "AUD" ? "au" : "eu";
 
     // Prefer the most specific search possible based on existing Stripe metadata.

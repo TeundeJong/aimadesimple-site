@@ -42,11 +42,19 @@ The CivicAI Assistant product page includes a primary "Pay & start onboarding" C
 
 The Stripe webhook endpoint at `app/api/stripe/webhook/route.ts` listens for `checkout.session.completed` and sends an **internal** purchase notification email via Postmark (best-effort), so onboarding can be scheduled immediately.
 
-Environment variables required for Stripe (names are used by the existing code):
+Environment variables required for Stripe (names are used by the existing code).
+
+You can configure Stripe in **either** of these ways:
+- **Legacy single account**: `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET`
+- **Per-region accounts (recommended)**: `STRIPE_EU_SECRET_KEY` / `STRIPE_AU_SECRET_KEY` and `STRIPE_EU_WEBHOOK_SECRET` / `STRIPE_AU_WEBHOOK_SECRET`
 
 ```bash
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
+STRIPE_EU_SECRET_KEY=
+STRIPE_AU_SECRET_KEY=
+STRIPE_EU_WEBHOOK_SECRET=
+STRIPE_AU_WEBHOOK_SECRET=
 NEXT_PUBLIC_APP_URL=
 ```
 
