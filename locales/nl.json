@@ -1,0 +1,146 @@
+
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Professionele AI-oplossingen voor moderne organisaties",
+  "claim": "Where insight becomes action.",
+
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Producten",
+    "pricing": "Prijzen",
+    "contact": "Contact",
+    "about": "Over ons",
+    "start": "Start nu",
+    "work": "Werk",
+    "future": "Toekomst",
+    "tagline": "Praktische software",
+    "start_project": "Start een project"
+  },
+
+  "footer": {
+    "body": "We bouwen praktische softwaresystemen voor bedrijven die door moeten — websites, web-apps en AI-integraties, deugdelijk opgeleverd.",
+    "col_work": "Werk",
+    "col_company": "Bedrijf",
+    "col_legal": "Juridisch",
+    "selected_projects": "Geselecteerde projecten",
+    "civicai_assistant": "Geïntegreerde AI-assistent",
+    "contractguard": "ContractGuard AI",
+    "services_label": "Services",
+    "about_label": "Over ons",
+    "future_label": "Toekomst",
+    "contact_label": "Contact",
+    "privacy_label": "Privacy",
+    "terms_label": "Voorwaarden",
+    "refund_label": "Restitutiebeleid",
+    "climate": "1% van de omzet gaat naar klimaatactie gericht op CO₂-impactreductie.",
+    "rights": "Alle rechten voorbehouden.",
+    "built_in": "Gemaakt in Coffs Harbour",
+    "available": "Wereldwijd beschikbaar"
+  },
+
+  "badges": {
+    "fast_live": "Binnen dagen live",
+    "privacy_ready": "Privacy-first & GDPR-ready",
+    "api_sla": "API-integraties & SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Plan intake",
+    "view_services": "Bekijk services",
+    "view_pricing": "Bekijk prijzen",
+    "contact_us": "Neem contact op"
+  },
+
+  "hero": {
+    "title": "Professionele AI-oplossingen voor moderne organisaties",
+    "subtitle": "We vertalen complexe data naar duidelijke beslissingen met praktische AI-integraties, support-bots en slimme automatisering. Enterprise-ready en privacy-first."
+  },
+
+  "services": {
+    "title": "Wat we leveren",
+    "cards": {
+      "bot": {
+        "title": "AI Support Bot",
+        "desc": "Train op je content, antwoord 24/7 en voer acties uit via API’s (tickets, orders, CRM).",
+        "cta": "Bekijk bot-oplossingen"
+      },
+      "doc": {
+        "title": "Document Analyzer",
+        "desc": "Upload contracten/handleidingen en krijg directe risico’s, samenvattingen en actiepunten.",
+        "cta": "Bekijk analyzer"
+      },
+      "auto": {
+        "title": "Automations & Integraties",
+        "desc": "Koppel Zapier/Make, Slack, e-mail of je CMS. Stroomlijn sales, support en onboarding.",
+        "cta": "Bekijk integraties"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Eenvoudige prijzen",
+    "subtitle": "Transparant, maandelijks opzegbaar. Enterprise op aanvraag.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "€29/m",
+        "cta": "Starten",
+        "items": [
+          "Basale AI-bot",
+          "100 documenten/maand",
+          "E-mail support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "€59/m",
+        "cta": "Proberen",
+        "items": [
+          "Geavanceerde bot & acties",
+          "Onbeperkt documenten*",
+          "Integraties & webhooks"
+        ],
+        "disclaimer": "*Fair-use policy"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Op aanvraag",
+        "cta": "Contact",
+        "items": [
+          "SLA & SSO",
+          "Dedicated support",
+          "Custom security"
+        ]
+      }
+    },
+    "note": "Prijzen excl. btw. Enterprise: maatwerk & volume-korting."
+  },
+
+  "about": {
+    "title": "Over ons",
+    "intro": "Wij geloven dat AI pas waarde heeft als inzichten ook daadwerkelijk tot actie leiden.",
+    "who": "CivicAI Solutions is een klein, hands-on team. We bouwen support-bots, document analyse en maatwerk automatisering waarmee teams sneller en consistenter werken.",
+    "what": "We leveren implementatie binnen dagen, privacy-first, met duidelijke KPI’s en overdraagbare kennis.",
+    "vision": "Visie",
+    "vision_text": "Transparante, betrouwbare AI die processen vereenvoudigt en mensen werk uit handen neemt.",
+    "roadmap": "Toekomst",
+    "roadmap_text": "Uitbreiding van integraties, betere document-intelligentie en strengere enterprise-security — zonder onze simplicity te verliezen."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Plan een korte intake — in 15 minuten mappen we jouw beste AI-kansen."
+  },
+
+  "misc": {
+    "learn_more": "Meer info",
+    "get_started": "Aan de slag",
+    "banner_caption": "Where insight becomes action."
+  },
+
+  "notFound.title": "Pagina niet gevonden",
+  "notFound.body": "De pagina die je zoekt bestaat niet of is verplaatst.",
+  "notFound.ctaHome": "Terug naar home",
+  "notFound.ctaContact": "Contact opnemen"
+}

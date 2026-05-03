@@ -1,0 +1,133 @@
+{
+  "brand": "CivicAI Solutions",
+  "tagline": "Professional AI solutions for modern organizations",
+  "claim": "Where insight becomes action.",
+
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "about": "About",
+    "start": "Get started",
+    "work": "Work",
+    "future": "Future",
+    "tagline": "Practical software",
+    "start_project": "Start a project"
+  },
+
+  "footer": {
+    "body": "We build practical software systems for businesses that need to move — websites, web apps, and AI integrations, delivered properly.",
+    "col_work": "Work",
+    "col_company": "Company",
+    "col_legal": "Legal",
+    "selected_projects": "Selected projects",
+    "civicai_assistant": "Integrated AI Assistant",
+    "contractguard": "ContractGuard AI",
+    "services_label": "Services",
+    "about_label": "About",
+    "future_label": "Future",
+    "contact_label": "Contact",
+    "privacy_label": "Privacy",
+    "terms_label": "Terms",
+    "refund_label": "Refund policy",
+    "climate": "1% of revenue is allocated to climate action focused on CO₂ impact reduction.",
+    "rights": "All rights reserved.",
+    "built_in": "Built in Coffs Harbour",
+    "available": "Available globally"
+  },
+
+  "badges": {
+    "fast_live": "Live in days",
+    "privacy_ready": "Privacy-first & GDPR-ready",
+    "api_sla": "API integrations & SLA"
+  },
+
+  "cta": {
+    "plan_intake": "Book intake",
+    "view_services": "View services",
+    "view_pricing": "View pricing",
+    "contact_us": "Contact us"
+  },
+
+  "hero": {
+    "title": "Professional AI solutions for modern organizations",
+    "subtitle": "We turn complex data into clear decisions with practical AI integrations, support bots, and smart automation. Enterprise-ready and privacy-first."
+  },
+
+  "services": {
+    "title": "What we deliver",
+    "cards": {
+      "bot": {
+        "title": "AI Support Bot",
+        "desc": "Train on your content, answer 24/7 and trigger actions via APIs (tickets, orders, CRM).",
+        "cta": "See bot solutions"
+      },
+      "doc": {
+        "title": "Document Analyzer",
+        "desc": "Upload contracts/manuals and get risks, summaries, and action points instantly.",
+        "cta": "See analyzer"
+      },
+      "auto": {
+        "title": "Automations & Integrations",
+        "desc": "Connect Zapier/Make, Slack, email or your CMS. Streamline sales, support, onboarding.",
+        "cta": "See integrations"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Simple pricing",
+    "subtitle": "Transparent, cancel monthly. Enterprise on request.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "€29/mo",
+        "cta": "Start",
+        "items": ["Basic AI bot", "100 documents/month", "Email support"]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "€59/mo",
+        "cta": "Try",
+        "items": ["Advanced bot & actions", "Unlimited documents*", "Integrations & webhooks"],
+        "disclaimer": "*Fair-use policy"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "On request",
+        "cta": "Contact",
+        "items": ["SLA & SSO", "Dedicated support", "Custom security"]
+      }
+    },
+    "note": "Prices excl. VAT. Enterprise: custom & volume discounts."
+  },
+
+  "about": {
+    "title": "About us",
+    "intro": "We believe AI only creates value when insights actually lead to action.",
+    "who": "CivicAI Solutions is a small, hands-on team. We build support bots, document analysis, and custom automation so teams work faster and more consistently.",
+    "what": "We deliver implementation within days, privacy-first, with clear KPIs and transferable knowledge.",
+    "vision": "Vision",
+    "vision_text": "Transparent, reliable AI that simplifies processes and takes work off people’s hands.",
+    "roadmap": "Roadmap",
+    "roadmap_text": "More integrations, better document intelligence, and stronger enterprise security — without losing our simplicity."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Book a short intake — in 15 minutes we map your best AI opportunities."
+  },
+
+  "misc": {
+    "learn_more": "Learn more",
+    "get_started": "Get started",
+    "banner_caption": "Where insight becomes action."
+  },
+
+  "notFound.title": "Page not found",
+  "notFound.body": "The page you are looking for doesn’t exist or has moved.",
+  "notFound.ctaHome": "Back to home",
+  "notFound.ctaContact": "Contact us"
+}
